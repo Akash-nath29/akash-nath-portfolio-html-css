@@ -1,0 +1,6 @@
+# robots.txt for https://www.aksn.lol
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.aksn.lol/sitemap.xml
