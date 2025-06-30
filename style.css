@@ -309,4 +309,11 @@ ul li span {
         justify-content: space-evenly;
         gap: 20px;
     }
+    .techStack ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .projects ul li {
+        width: 100%;
+        gap: 20vh;
+    }
 }
