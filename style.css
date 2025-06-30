@@ -129,7 +129,53 @@ body {
 }
 
 .btn-resume {
+    position: relative;
     border: 1px solid #0400ff;
+}
+
+.btn-resume::after {
+    content: 'Hire me please 🥺🙏';
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.btn-resume::before {
+    content: '';
+    position: absolute;
+    bottom: 111%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.btn-resume.show-tooltip::after,
+.btn-resume.show-tooltip::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-resume:hover {
+    background-color: #0400ff1a;
+    /* color: white; */
 }
 
 /* Education */
@@ -235,11 +281,19 @@ ul li span {
     align-items: center;
     justify-content: center;
     gap: 5px;
+    cursor:pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.techStack ul li:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
 }
 
 .techStack ul li img {
     width: 50px;
     height: 50px;
+    filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.265));
 }
 
 /* Contact */
